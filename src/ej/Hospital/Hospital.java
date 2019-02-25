@@ -89,6 +89,7 @@ public class Hospital {
 	public Paciente pacienteMasUrgente() {
 		PacienteGrave pacienteMasgrave = null;
 		PacienteGrave acumulador = null;
+		Paciente pacienteMargrave2= null;
 		int veces = 0;// Sólo es para inicializar el objeto pacienteMasGrave. No me importa que apunte
 						// a otro objeto, es sólo para comparar
 		for (int i = 0; i < contadorpacientes; i++) {
@@ -109,8 +110,24 @@ public class Hospital {
 					}
 				}
 			}
+			
 		}
-		return pacienteMasgrave;
+		pacienteMargrave2=pacienteMasgrave;
+		if (pacienteMasgrave==null) {
+				for(int j=0; j<contadorpacientes; j++) {
+				if (veces==0) {
+					pacienteMargrave2= tpacientes[j];
+					veces++;
+				}
+				else {
+					if (tpacientes[j].getId()<pacienteMargrave2.getId()) {
+						pacienteMargrave2=tpacientes[j];
+					}
+				}
+			}
+		}
+		
+		return pacienteMargrave2;
 
 	}
 }

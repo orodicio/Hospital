@@ -8,7 +8,7 @@ package ej.Hospital;
 public class TestHospital {
 	public static void main(String argv[]) {
 		Hospital lapaz = new Hospital(10);
-		lapaz.ingreso(new Paciente("Pepe"));
+	    lapaz.ingreso(new Paciente("Pepe"));
 		lapaz.ingreso(new Paciente("Ana"));
 		lapaz.ingreso(new PacienteGrave("luis", TipoGravedad.MENOS_GRAVE));
 		lapaz.alta(2); // Se borra el paciente Ana
@@ -21,7 +21,7 @@ public class TestHospital {
 		lapaz.ingreso(new Paciente("Ramon"));
 		lapaz.ingreso(new PacienteGrave("Maria", TipoGravedad.MUY_GRAVE));
 		lapaz.listapacientes();
-		// Debe mostrar a Jaime
+		//Debe mostrar a Jaime
 		System.out.println("Paciente mas urgente:" + lapaz.pacienteMasUrgente());
 	}
 
